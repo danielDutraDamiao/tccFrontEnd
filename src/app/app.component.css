@@ -1,0 +1,26 @@
+.login-card {
+    max-width: 400px;
+    margin:  z;
+    padding: 20px;
+    height: 0 auto;
+  }
+  
+  mat-card-actions {
+    justify-content: flex-end;
+  }
+
+  .center-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .login-title {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  

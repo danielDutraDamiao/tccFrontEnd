@@ -13,11 +13,15 @@ import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { HomeRoutingModule } from './components/home/home-routing.module';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     MatNativeDateModule,
     MatButtonModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    HomeRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

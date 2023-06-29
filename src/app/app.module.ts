@@ -15,13 +15,14 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { HomeRoutingModule } from './components/home/home-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +36,9 @@ import { HomeRoutingModule } from './components/home/home-routing.module';
     MatButtonModule,
     MatCardModule,
     FormsModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

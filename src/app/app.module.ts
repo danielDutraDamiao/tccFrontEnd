@@ -16,6 +16,13 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { HomeRoutingModule } from './components/home/home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CarouselModule } from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
+import { TagModule } from 'primeng/tag';
+import { AnimateModule } from 'primeng/animate';
+import { CardModule } from 'primeng/card';
+
+
 
 
 
@@ -37,7 +44,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     FormsModule,
     HomeRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CarouselModule,
+    ButtonModule,
+    TagModule,
+    AnimateModule,
+    CardModule
+    
     
   ],
   providers: [],

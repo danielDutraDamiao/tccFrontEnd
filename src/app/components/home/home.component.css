@@ -89,6 +89,18 @@
 
 /* End Navbar */
 
+.my-carousel {
+  position: relative;
+  z-index: 1;
+}
+
+.banner {
+  position: relative;
+  z-index: 2;
+}
+
+
+
 
 
 /* Start Latest Posts */

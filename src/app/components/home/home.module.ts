@@ -7,7 +7,6 @@ import { CardModule } from 'primeng/card';
 
 
 
-
 @NgModule({
   declarations: [],
   imports: [
@@ -15,8 +14,7 @@ import { CardModule } from 'primeng/card';
     FormsModule,
     HomeRoutingModule,
     CarouselModule,
-    CardModule
-    
+    CardModule,
   ]
 })
 export class HomeModule { }

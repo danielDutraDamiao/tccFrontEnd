@@ -106,7 +106,7 @@
 			<div>
 			  <h4 class="mb-1">{{ produto.nomeProduto }}</h4>
 			  <h6 class="mt-0 mb-3">{{ '$' + produto.precoProduto }}</h6>
-			  <p-tag [value]="produto.categoriaProduto.nomeCategoria" [severity]="getSeverity(produto.categoriaProduto.nomeCategoria)"></p-tag>
+			  <p-tag *ngIf="produto?.subcategoria?.categoria && produto?.categoriaProduto" [value]="produto.subcategoria.categoria.nomeCategoria" [severity]="getSeverity(produto.categoriaProduto.nomeCategoria)"></p-tag>
 			  <div class="car-buttons mt-5">
 				<p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
 				<p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-star-fill"></p-button>

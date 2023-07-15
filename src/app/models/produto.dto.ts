@@ -1,4 +1,4 @@
-import { CategoriaDTO } from "./categoria.dto";
+import { SubCategoriaDTO } from "./subcategoria.dto";
 
 export class ProdutoDTO {
     
@@ -7,6 +7,5 @@ export class ProdutoDTO {
     idCategoria!: String;
     precoProduto!: Number;
     imagemProduto!: String;
-    categoriaPRoduto: CategoriaDTO = new CategoriaDTO();
-
+    subCategoria!: SubCategoriaDTO;
 }   

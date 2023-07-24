@@ -12,7 +12,6 @@
 
   </head>
   <body>
-	<router-outlet></router-outlet>
     <!-- Example Code -->
     
 	<div class="upper-bar">
@@ -43,7 +42,7 @@
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
 		  <li class="nav-item">
-			<a class="nav-link active" aria-current="page" href="#">Vendas</a>
+			<a class="nav-link active" aria-current="page" [routerLink]="'/venda'">Vendas</a>
 		  </li>
 
 		  <li class="nav-item">
@@ -94,29 +93,9 @@
 	</button>
   </div>
 
-  <!--fimcarrosel inicial--> <!-- Start Carousel -->
-
-	<div class="card">
-	  <p-carousel [value]="produtos" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
-		<ng-template let-produto pTemplate="item">
-		  <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
-			<div class="mb-3">
-			  <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ produto.imagemProduto }}" [alt]="produto.nomeProduto" class="w-6 shadow-2" />
-			</div>
-			<div>
-			  <h4 class="mb-1">{{ produto.nomeProduto }}</h4>
-			  <h6 class="mt-0 mb-3">{{ '$' + produto.precoProduto }}</h6>
-			  <p-tag [value]="produto.categoriaProduto.nomeCategoria" [severity]="getSeverity(produto.categoriaProduto.nomeCategoria)"></p-tag>
-			  <div class="car-buttons mt-5">
-				<p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
-				<p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-star-fill"></p-button>
-			  </div>
-			</div>
-		  </div>
-		</ng-template>
-	  </p-carousel>
-	</div>  
-	<!-- End Carousel -->
+  <!--fimcarrosel inicial--> 
+  
+  
 
  
   <br><br><br>
@@ -153,7 +132,7 @@
 		<!-- Start Grid Column -->
 		<div class="col-md-6 col-lg-4">
 		  <div class="card">
-			<img class="card-img-top" src="assets/images/recicle.jpeg" alt="" />
+			<img class="card-img-top" src="assets/images/reciclagem.png" alt="" />
 			<div class="card-body">
 			  <h4 class="card-title">Recicle para Empresas</h4>
 			  <p class="card-text">
@@ -169,7 +148,29 @@
   <!-- End Latest Posts -->
 
   
+<!-- Start Carousel -->
 
+<div class="card">
+	<p-carousel [value]="produtos" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+	  <ng-template let-produto pTemplate="item">
+		<div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+		  <div class="mb-3">
+			<img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ produto.imagemProduto }}" [alt]="produto.nomeProduto" class="w-6 shadow-2" />
+		  </div>
+		  <div>
+			<h4 class="mb-1">{{ produto.nomeProduto }}</h4>
+			<h6 class="mt-0 mb-3">{{ '$' + produto.precoProduto }}</h6>
+			<p-tag [value]="produto.categoriaProduto.nomeCategoria" [severity]="getSeverity(produto.categoriaProduto.nomeCategoria)"></p-tag>
+			<div class="car-buttons mt-5">
+			  <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
+			  <p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-star-fill"></p-button>
+			</div>
+		  </div>
+		</div>
+	  </ng-template>
+	</p-carousel>
+  </div>  
+  <!-- End Carousel -->
 
 
 

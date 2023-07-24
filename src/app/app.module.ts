@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,8 +20,9 @@ import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { AnimateModule } from 'primeng/animate';
 import { CardModule } from 'primeng/card';
-
-
+import { VendaRoutingModule } from './components/venda/venda-routing.module';
+import { VendaModule } from './components/venda/venda.module';
+import { MegaMenuModule } from 'primeng/megamenu';
 
 
 
@@ -30,6 +30,7 @@ import { CardModule } from 'primeng/card';
   declarations: [
     AppComponent,
     HomeComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -49,7 +50,10 @@ import { CardModule } from 'primeng/card';
     ButtonModule,
     TagModule,
     AnimateModule,
-    CardModule
+    CardModule,
+    VendaRoutingModule,
+    VendaModule,
+    MegaMenuModule,
     
     
   ],

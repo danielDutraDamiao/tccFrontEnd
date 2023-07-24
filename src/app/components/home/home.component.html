@@ -95,7 +95,30 @@
 
   <!--fimcarrosel inicial--> 
   
-  
+ 
+<!-- Start Carousel -->
+
+	<div class="card">
+	  <p-carousel [value]="produtos" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+		<ng-template let-produto pTemplate="item">
+		  <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+			<div class="mb-3">
+			  <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ produto.imagemProduto }}" [alt]="produto.nomeProduto" class="w-6 shadow-2" />
+			</div>
+			<div>
+			  <h4 class="mb-1">{{ produto.nomeProduto }}</h4>
+			  <h6 class="mt-0 mb-3">{{ '$' + produto.precoProduto }}</h6>
+			  <p-tag *ngIf="produto?.subcategoria?.categoria && produto?.categoriaProduto" [value]="produto.subcategoria.categoria.nomeCategoria" [severity]="getSeverity(produto.categoriaProduto.nomeCategoria)"></p-tag>
+			  <div class="car-buttons mt-5">
+				<p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
+				<p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-star-fill"></p-button>
+			  </div>
+			</div>
+		  </div>
+		</ng-template>
+	  </p-carousel>
+	</div>  
+	<!-- End Carousel -->
 
  
   <br><br><br>

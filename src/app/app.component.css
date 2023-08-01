@@ -24,3 +24,79 @@
   }
   
   
+/* Start Upper Bar */
+.upper-bar button{
+  background-color: #08526d;
+  color: #FFF;
+  padding: 4px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid #d4dbd7;
+  border-radius: 10px; /* Define o raio da borda */ 
+ 
+  
+}
+.upper-bar {
+  background-color: #08526d;
+  color: #FFF
+}
+
+.upper-bar .info {
+  margin: 15px 0
+}
+
+@media (max-width: 576px) {
+  .upper-bar .info:first-child {
+    margin-bottom: 0
+  }
+}
+
+.upper-bar span {
+  color: #bfc6c9
+}
+
+.upper-bar .get-quote {
+  display: inline-block;
+  border: 1px solid #ec1c23;
+  padding: 2px 10px;
+  margin-left: 20px;
+}
+
+@media (max-width: 576px) {
+  .upper-bar .get-quote {
+    border: none;
+    margin-left: 5px
+  }
+}
+
+/* End Upper Bar */
+
+
+/* Start Navbar */
+
+.navbar-brand > span {
+  font-size: 40px
+}
+
+.navbar-brand span:first-child {
+  color: #08526d;
+  font-weight: bold;
+}
+
+.navbar-brand span:last-child {
+  color: #4dd449;
+}
+
+.navbar-nav .nav-link {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-left: 20px;
+  color: #08526d;
+  font-weight: bold
+}
+
+.navbar-nav .active > .nav-link {
+  color: #ec1c23 !important
+}
+
+/* End Navbar */

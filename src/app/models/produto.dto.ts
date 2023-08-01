@@ -1,11 +1,13 @@
 import { SubCategoriaDTO } from "./subcategoria.dto";
+import { CategoriaDTO } from "./categoria.dto";
 
 export class ProdutoDTO {
     
-    idProduto!: String;
-    nomeProduto!: String;
-    idCategoria!: String;
+    idProduto!: number;
+    nomeProduto!: string;
+    idCategoria!: string;
     precoProduto!: Number;
-    imagemProduto!: String;
-    subCategoria!: SubCategoriaDTO;
+    categoriaProduto: CategoriaDTO = new CategoriaDTO();
+    imagemProduto!: string;
+    subcategoria!: SubCategoriaDTO;
 }   

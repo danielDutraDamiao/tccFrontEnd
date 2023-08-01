@@ -54,8 +54,6 @@ import { MegaMenuModule } from 'primeng/megamenu';
     VendaRoutingModule,
     VendaModule,
     MegaMenuModule,
-    
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

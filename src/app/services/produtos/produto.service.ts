@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ProdutoDTO } from 'src/app/models/produto.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -10,23 +11,23 @@ export class ProdutoService {
 
   constructor(private http: HttpClient) { }
 
-  listarProdutos(): Observable<any> {
-    return this.http.get(this.baseURL);
+  listarProdutos(): Observable<ProdutoDTO[]> {
+    return this.http.get<ProdutoDTO[]>(this.baseURL);
   }
-  
-  obterProduto(id: number): Observable<any> {
-    return this.http.get(`${this.baseURL}/${id}`);
+
+  obterProduto(id: number): Observable<ProdutoDTO> {
+    return this.http.get<ProdutoDTO>(`${this.baseURL}/${id}`);
   }
-  
-  criarProduto(produto: any): Observable<any> {
-    return this.http.post(this.baseURL, produto);
+
+  criarProduto(produto: ProdutoDTO): Observable<ProdutoDTO> {
+    return this.http.post<ProdutoDTO>(this.baseURL, produto);
   }
-  
-  atualizarProduto(id: number, produto: any): Observable<any> {
-    return this.http.put(`${this.baseURL}/${id}`, produto);
+
+  atualizarProduto(id: number, produto: ProdutoDTO): Observable<ProdutoDTO> {
+    return this.http.put<ProdutoDTO>(`${this.baseURL}/${id}`, produto);
   }
-  
-  deletarProduto(id: number): Observable<any> {
-    return this.http.delete(`${this.baseURL}/${id}`);
+
+  deletarProduto(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseURL}/${id}`);
   }
 }

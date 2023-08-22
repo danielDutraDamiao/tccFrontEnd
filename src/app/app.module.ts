@@ -11,7 +11,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { HomeRoutingModule } from './components/home/home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,6 +23,9 @@ import { CardModule } from 'primeng/card';
 import { VendaRoutingModule } from './components/venda/venda-routing.module';
 import { VendaModule } from './components/venda/venda.module';
 import { MegaMenuModule } from 'primeng/megamenu';
+import { LoginComponent } from './components/login/login.component';
+import { ToastrModule } from 'ngx-toastr'; // Importe esta linha
+
 
 
 
@@ -30,6 +33,7 @@ import { MegaMenuModule } from 'primeng/megamenu';
   declarations: [
     AppComponent,
     HomeComponent,
+    LoginComponent
  
   ],
   imports: [
@@ -54,6 +58,10 @@ import { MegaMenuModule } from 'primeng/megamenu';
     VendaRoutingModule,
     VendaModule,
     MegaMenuModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule, // Adicione esta linha
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

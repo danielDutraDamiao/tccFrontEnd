@@ -1,0 +1,38 @@
+<router-outlet></router-outlet>
+<div class="login-container">
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+      <div class="col-md-6">
+        <div class="card shadow rounded mt-0">
+          <div class="card-header">
+            <a class="navbar-brand" href="#">
+                <span>ECO</span><span>Market</span>
+            </a>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="formLogin" >
+              <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" formControlName="username">
+                <div class="form-text text-danger" *ngIf="isFormControlInvalid('username')">
+                    O username deve conter pelo menos 6 caracteres
+                </div>
+
+
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName="password">
+                <div class="form-text text-danger" *ngIf="isFormControlInvalid('password')">
+                  O password deve conter pelo menos 6 caracteres
+              </div>
+              </div>
+              <button type="button" class="btn btn-primary" [disabled]="!formLogin.valid" (click)="submitForm()">
+                Entrar 
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

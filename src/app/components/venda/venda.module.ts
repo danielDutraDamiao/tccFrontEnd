@@ -5,6 +5,11 @@ import { VendaRoutingModule } from './venda-routing.module';
 import { VendaComponent } from './venda.component';
 import { FormsModule } from '@angular/forms'; // Importe o módulo FormsModule
 import { MegaMenuModule } from 'primeng/megamenu';
+import { DataViewModule} from 'primeng/dataview'; // Importe o módulo DataView do PrimeNG
+import { DataViewLayoutOptions } from 'primeng/dataview';
+import { TagModule } from 'primeng/tag';
+import { RatingModule } from 'primeng/rating';
+
 
 
 
@@ -15,7 +20,11 @@ import { MegaMenuModule } from 'primeng/megamenu';
     VendaRoutingModule,
     DropdownModule,
     FormsModule,
-    MegaMenuModule
+    MegaMenuModule,
+    DataViewModule,
+    TagModule,
+    RatingModule
+    
   ]
 
 })

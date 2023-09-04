@@ -24,7 +24,10 @@ import { VendaRoutingModule } from './components/venda/venda-routing.module';
 import { VendaModule } from './components/venda/venda.module';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { LoginComponent } from './components/login/login.component';
-import { ToastrModule } from 'ngx-toastr'; // Importe esta linha
+import { ToastrModule } from 'ngx-toastr';
+import { CadastroComponent } from './components/cadastro/cadastro.component'; // Importe esta linha
+import { CadastroModule } from './components/cadastro/cadastro.module';
+import { LoginModule } from './components/login/login.module';
 
 
 
@@ -33,7 +36,8 @@ import { ToastrModule } from 'ngx-toastr'; // Importe esta linha
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    CadastroComponent
  
   ],
   imports: [
@@ -60,7 +64,9 @@ import { ToastrModule } from 'ngx-toastr'; // Importe esta linha
     MegaMenuModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule, // Adicione esta linha
+    BrowserAnimationsModule,
+    CadastroModule,
+    LoginModule,
     ToastrModule.forRoot(),
   ],
   providers: [],

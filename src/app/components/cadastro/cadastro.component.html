@@ -1,43 +1,62 @@
 <div class="cadastro-container">
-    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-      <div class="col-md-6">
-        <div class="card shadow rounded mt-0">
-          <h2 class="text-center mb-4">Registrar</h2>
-          <div class="card-header">
-            <a class="navbar-brand" href="#">
-              <span>ECO</span><span>Market</span>
-            </a>
-          </div>
-          <div class="card-body">
-            <form [formGroup]="formCadastro">
-              <div class="mb-3">
-                <label class="form-label">E-mail</label>
-                <input type="email" class="form-control" formControlName="email">
-                <div class="form-text text-danger" *ngIf="isFormControlInvalid('email')">
-                  E-mail inválido
-                </div>
+  <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="col-md-6">
+      <div class="card shadow rounded mt-0">
+        <h2 class="text-center mb-4">Registrar</h2>
+        <div class="card-header">
+          <a class="navbar-brand" href="#">
+            <span>ECO</span><span>Market</span>
+          </a>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formCadastro">
+            <!-- Campo Name -->
+            <div class="mb-3">
+              <label class="form-label">Nome</label>
+              <input type="text" class="form-control" formControlName="name">
+              <div class="form-text text-danger" *ngIf="isFormControlInvalid('name')">
+                Nome é obrigatório
               </div>
-              <div class="mb-3">
-                <label class="form-label">Senha</label>
-                <input type="password" class="form-control" formControlName="password">
-                <div class="form-text text-danger" *ngIf="isFormControlInvalid('password')">
-                  A senha deve conter pelo menos 6 caracteres
-                </div>
+            </div>
+            <!-- Campo Username -->
+            <div class="mb-3">
+              <label class="form-label">Nome de usuário</label>
+              <input type="text" class="form-control" formControlName="username">
+              <div class="form-text text-danger" *ngIf="isFormControlInvalid('username')">
+                O nome de usuário é obrigatório e deve ter pelo menos 6 caracteres
               </div>
-              <div class="mb-3">
-                <label class="form-label">Confirmação de Senha</label>
-                <input type="password" class="form-control" formControlName="confirmPassword">
-                <div class="form-text text-danger" *ngIf="isPasswordMismatch()">
-                  As senhas não coincidem
-                </div>
+            </div>
+            <!-- Campo E-mail -->
+            <div class="mb-3">
+              <label class="form-label">E-mail</label>
+              <input type="email" class="form-control" formControlName="email">
+              <div class="form-text text-danger" *ngIf="isFormControlInvalid('email')">
+                E-mail inválido
               </div>
-              <button type="button" class="btn btn-primary" [disabled]="!formCadastro.valid || isPasswordMismatch()" (click)="submitForm()">
-                Registrar
-              </button>
-            </form>
-          </div>
+            </div>
+            <!-- Campo Senha -->
+            <div class="mb-3">
+              <label class="form-label">Senha</label>
+              <input type="password" class="form-control" formControlName="password">
+              <div class="form-text text-danger" *ngIf="isFormControlInvalid('password')">
+                A senha deve conter pelo menos 6 caracteres
+              </div>
+            </div>
+            <!-- Campo Confirmação de Senha -->
+            <div class="mb-3">
+              <label class="form-label">Confirmação de Senha</label>
+              <input type="password" class="form-control" formControlName="confirmPassword">
+              <div class="form-text text-danger" *ngIf="isPasswordMismatch()">
+                As senhas não coincidem
+              </div>
+            </div>
+            <!-- Botão de Registro -->
+            <button type="button" class="btn btn-primary" [disabled]="!formCadastro.valid || isPasswordMismatch()" (click)="submitForm()">
+              Registrar
+            </button>
+          </form>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

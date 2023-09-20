@@ -53,7 +53,7 @@
 		<ng-template let-produto pTemplate="item">
 		  <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
 			<div class="mb-3">
-			  <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ produto.imagemProduto }}" [alt]="produto.nomeProduto" class="w-6 shadow-2" />
+				<img [src]="converterImagemBase(produto.imagemProduto)" alt="Produto" *ngFor="let produto of produtos">
 			</div>
 			<div>
 			  <h4 class="mb-1">{{ produto.nomeProduto }}</h4>

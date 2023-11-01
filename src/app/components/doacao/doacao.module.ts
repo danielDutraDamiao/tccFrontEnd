@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DoacaoRoutingModule } from './doacao-routing.module';
 import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
-import { LoginRoutingModule } from './login-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { MultiSelectModule } from 'primeng/multiselect'; // Verifique o caminho correto
+import { CascadeSelectModule } from 'primeng/cascadeselect';
 
 
 
@@ -15,12 +15,12 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FormsModule,
-    LoginRoutingModule,
+    DoacaoRoutingModule,
     CarouselModule,
     CardModule,
-    ReactiveFormsModule, 
-    RouterModule
+    MultiSelectModule, 
+    CascadeSelectModule
 
   ]
 })
-export class LoginModule { }
+export class DoacaoModule { }

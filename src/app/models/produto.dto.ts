@@ -10,4 +10,8 @@ export class ProdutoDTO {
     categoriaProduto: CategoriaDTO = new CategoriaDTO();
     imagemProduto!: string;
     subcategoria!: SubCategoriaDTO;
+    quantidade!: Number;
+    statusInventario!: string;
+    avaliacao!: Number;
+
 }   

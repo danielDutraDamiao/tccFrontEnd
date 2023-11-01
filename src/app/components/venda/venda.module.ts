@@ -5,8 +5,7 @@ import { VendaRoutingModule } from './venda-routing.module';
 import { VendaComponent } from './venda.component';
 import { FormsModule } from '@angular/forms'; // Importe o módulo FormsModule
 import { MegaMenuModule } from 'primeng/megamenu';
-import { DataViewModule} from 'primeng/dataview'; // Importe o módulo DataView do PrimeNG
-import { DataViewLayoutOptions } from 'primeng/dataview';
+import { DataViewModule, DataViewLayoutOptions} from 'primeng/dataview'; // Importe o módulo DataView do PrimeNG
 import { TagModule } from 'primeng/tag';
 import { RatingModule } from 'primeng/rating';
 
@@ -23,9 +22,10 @@ import { RatingModule } from 'primeng/rating';
     MegaMenuModule,
     DataViewModule,
     TagModule,
-    RatingModule
-    
+    RatingModule,
+  ],
+  providers: [
+    { provide: DataViewLayoutOptions, useValue: {}} // Add this line to provide DataViewLayoutOptions
   ]
-
 })
 export class VendaModule { }

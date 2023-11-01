@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   produtos: ProdutoDTO[] = [];
   responsiveOptions: any[] = [];
 
-  
   constructor(private homeService: HomeService, private sanitizer: DomSanitizer) { }
 
 
@@ -21,8 +20,6 @@ export class HomeComponent implements OnInit {
     this.homeService.listarProdutos().subscribe(
       (resposta: ProdutoDTO[]) => {
         this.produtos = resposta;
-        console.log('Produtos listados com sucesso!', resposta);
-        console.log("Valor da imagem em base64" + this.produtos[0].imagemProduto)
       },
       (error) => {
         console.error(error);

@@ -28,10 +28,12 @@
 	  <h4>Vamos contribuir hoje?</h4>
 	  <button style="display: inline-block; margin-right: 10px;">Quero Doar!</button>
 
+    <p-cascadeSelect [(ngModel)]="estadoSelecionado" [options]="options" optionLabel="label" optionValue= "value" optionGroupLabel="name" [optionGroupChildren]="['items']" placeholder="Selecione um Estado"></p-cascadeSelect>
+
+
 	</div>
   </div>
   <!-- End Overview -->
   <br><br><br>
 
   
-<p-cascadeSelect [(ngModel)]="estadoSelecionado" [options]="options" optionLabel="nomeEstados"  [style]="{ minWidth: '14rem' }" placeholder="Selecione um Estado"></p-cascadeSelect> 

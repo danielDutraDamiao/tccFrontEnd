@@ -11,6 +11,12 @@ import { ProdutoService } from 'src/app/services/produtos/produto.service';
 import { SubCategoriaService } from 'src/app/services/subcategorias/subcategorias.service';
 import { ProductService } from './product.service';
 import { Product } from 'src/app/models/product';
+import { DataViewLayoutOptions } from 'primeng/dataview';
+
+import { DomSanitizer } from '@angular/platform-browser';
+
+
+type DataViewLayout = 'list' | 'grid';
 
 @Component({
   selector: 'app-venda',
@@ -23,17 +29,18 @@ export class VendaComponent implements OnInit {
   produtos: ProdutoDTO[] = [];
   items!: MegaMenuItem[];
   subCategorias: SubCategoriaDTO[] = [];
-  products!: Product[];
+  layout: DataViewLayout = 'grid';
+  
 
   constructor(
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService,
     private subCategoriaService: SubCategoriaService,
-    private productService: ProductService
+    private productService: ProductService,
+    private dataViewLayoutOptions: DataViewLayoutOptions
   ) { this.items = []; }
 
   ngOnInit() {
-    this.productService.getProducts().then((data) => (this.products = data.slice(0, 5)));
     forkJoin({
       categorias: this.categoriaService.listarCategorias(),
       subCategorias: this.subCategoriaService.listarSubCategorias(),
@@ -44,20 +51,45 @@ export class VendaComponent implements OnInit {
       this.produtos = result.produtos;
       this.items = this.buildMenu(this.produtos);
     });
+    this.produtos.forEach(produto => {
+      this.loadRandomImageForProduct(produto);
+    });
   }
 
+  onLayoutChange(layout: DataViewLayout) {
+    this.layout = layout; // Update the dataViewLayout property
+  }
 
-  testeProdutos() {
-    this.produtoService.listarProdutos().subscribe(produtos => {
-        produtos.forEach(produto => {
-            if (!produto.subcategoria) {
-            } else {
-            }
+  loadRandomImageForProduct(produto: ProdutoDTO): void {
+    const accessKey = 'YOUR_ACCESS_KEY'; // Substitua pela sua chave de acesso da API do Unsplash
+    const url = `https://api.unsplash.com/photos/random?client_id=${accessKey}&query=${encodeURIComponent(produto.nomeProduto)}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        if (data && data.urls && data.urls.small) {
+          // Atualizar o produto com a URL da imagem
+          produto.imagemProduto = data.urls.small;
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao carregar imagem do Unsplash:', error);
+        // Aqui você pode definir uma imagem padrão em caso de erro
+        produto.imagemProduto = 'path/to/default/image.png';
+      });
+  }
+
+//   testeProdutos() {
+//     this.produtoService.listarProdutos().subscribe(produtos => {
+//         produtos.forEach(produto => {
+//             if (!produto.subcategoria) {
+//             } else {
+//             }
             
-            console.log("ID da subcategoria atual:", this.subCategorias[0].idSubCategoria);
-        });
-    });
-}
+//             console.log("ID da subcategoria atual:", this.subCategorias[0].idSubCategoria);
+//         });
+//     });
+// }
 
 
 

@@ -1,0 +1,161 @@
+
+
+
+/* Start Latest Posts */
+
+.latest-posts {
+  padding: 0 0 100px;
+
+}
+
+.latest-posts h2 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'FontAwesome';
+  
+}
+
+.latest-posts .section-description {
+  line-height: 1.6;
+  font-size: 20px;
+  width: 80%;
+  margin: 0 auto 45px;
+  color: #6a6a6a;
+}
+
+.latest-posts .card {
+  margin-bottom: 30px
+}
+
+.latest-posts .card .card-title {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #08526d
+}
+
+.latest-posts .card .card-text {
+  color: #787878;
+  margin-bottom: 5px
+}
+
+.latest-posts button {
+  background-color: #ed1d24;
+  color: #FFF;
+  padding: 5px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 5px solid #ed1d24;
+  border-radius: 20px; /* Define o raio da borda */
+
+}
+/* End Latest Posts */
+
+/* PRODUTOS */
+.produtos h4 {
+  font-size: 32px;
+  color: #08526d;
+  font-family: "Arial", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* FIM PRODUTOS */
+
+/* Start Overview */
+
+.overview {
+  padding: 100px;
+  background-color: #f7f7f7;
+
+}
+
+.overview h2 {
+  font-size : 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 992px) {
+  .overview h2 {
+    font-size: 30px;
+    margin-bottom: 15px
+  }
+}
+
+.overview p {
+  line-height: 2;
+  font-size: 20px;
+  width: 80%;
+  margin: 0 auto 15px;
+  color: #6a6a6a;
+}
+
+@media (max-width: 992px) {
+  .overview p {
+    width: 100%;
+  }
+}
+
+.overview h4 {
+  letter-spacing: 2px;
+  font-weight: normal;
+  color: #8b8a8a;
+  margin-bottom: 40px;
+}
+
+.overview button {
+  background-color: #ed1d24;
+  color: #FFF;
+  padding: 10px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid #ed1d24;
+}
+
+/* End Overview */
+
+
+
+
+
+/* Start Choose Us */
+
+.choose-us img {
+  max-width: 100%
+}
+
+.choose-us .info {
+  padding: 0;
+}
+
+.choose-us .info:last-child {
+  background-color: #bef1e0;
+  color: #221e1e;
+  padding-top:  1px;
+  padding-bottom: 20px
+}
+
+.choose-us .h1 {
+  margin: 40px
+}
+
+.choose-us p {
+  margin: 40px;
+  line-height: 2;
+  font-size: 18px
+}
+
+.choose-us .read-more {
+  display: inline-block;
+  padding: 8px 20px;
+  margin: 0 0 0 40px;
+  background-color: #1c0452;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* End Choose Us */

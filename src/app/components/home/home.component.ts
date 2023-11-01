@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   produtos: ProdutoDTO[] = [];
   responsiveOptions: any[] = [];
 
+  
   constructor(private homeService: HomeService, private sanitizer: DomSanitizer) { }
 
 

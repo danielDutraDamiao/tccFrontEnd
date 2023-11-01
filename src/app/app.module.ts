@@ -28,7 +28,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { CadastroComponent } from './components/cadastro/cadastro.component'; // Importe esta linha
 import { CadastroModule } from './components/cadastro/cadastro.module';
 import { LoginModule } from './components/login/login.module';
-
+import { DoacaoComponent } from './components/doacao/doacao.component';
+import { DoacaoModule } from './components/doacao/doacao.module';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
 
 
 
@@ -37,7 +40,8 @@ import { LoginModule } from './components/login/login.module';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    DoacaoComponent
  
   ],
   imports: [
@@ -67,7 +71,10 @@ import { LoginModule } from './components/login/login.module';
     BrowserAnimationsModule,
     CadastroModule,
     LoginModule,
+    DoacaoModule,
+    MultiSelectModule,
     ToastrModule.forRoot(),
+    CascadeSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

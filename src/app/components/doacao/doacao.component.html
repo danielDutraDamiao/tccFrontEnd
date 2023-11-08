@@ -1,39 +1,43 @@
-<!-- <div>
-
-
-
-      <div class="choose-us">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="info col-xl-6">
-              <img src="assets/images/teste2.jpeg" alt="" />
-            </div>
-            <div class="info col-xl-6">
-              <h2 class="h1">Por que realizar uma doação?</h2>
-              <p>No mundo em que vivemos, onde muitas crianças ainda enfrentam situações extremas, como viver em lixões, cada ato de doação pode fazer a diferença. Ao realizar uma doação, você está estendendo a mão para aqueles que mais precisam, oferecendo esperança e oportunidades para uma vida melhor. Sua generosidade pode proporcionar alimentação, abrigo, acesso à educação e cuidados médicos essenciais. Cada doação é um gesto de amor e solidariedade que tem o poder de transformar vidas inteiras. Junte-se a nós nessa missão de ajudar os mais vulneráveis e construir um futuro mais justo e humano. Sua doação pode ser a chave para um sorriso, para a superação de desafios e para a construção de um mundo mais acolhedor para todos. Faça a diferença hoje mesmo através de sua doação!</p>
-              <a href="#" class="read-more">Saiba Mais</a>
-            </div>
-          </div>
-        </div>
-      </div>
-  End Latest Posts 
-</div> -->
-
- <!-- Start Overview -->
- <div class="overview text-center">
-	<div class="container">
-	  <h2 class="h1">Realize sua doação!</h2>
-	  <p>
-		Selecione a ONG mais próxima de você e faça a diferença!</p>
-	  <h4>Vamos contribuir hoje?</h4>
-	  <button style="display: inline-block; margin-right: 10px;">Quero Doar!</button>
-
-    <p-cascadeSelect [(ngModel)]="estadoSelecionado" [options]="options" optionLabel="label" optionValue= "value" optionGroupLabel="name" [optionGroupChildren]="['items']" placeholder="Selecione um Estado"></p-cascadeSelect>
-
-
-	</div>
+<!-- Start Overview -->
+<div class="overview text-center">
+  <div class="container">
+    <h2 class="h1">Realize sua doação!</h2>
+    <p>Selecione a ONG mais próxima de você e faça a diferença!</p>
+    <h4>Vamos contribuir hoje?</h4>
+    <button style="display: inline-block; margin-right: 10px;">Quero Doar!</button>
+    <p-cascadeSelect [(ngModel)]="cidadeSelecionada" 
+                 [options]="options" 
+                 optionLabel="label" 
+                 optionValue="value" 
+                 optionGroupLabel="name" 
+                 [optionGroupChildren]="['items']" 
+                 placeholder="Selecione um Estado" 
+                 (onChange)="filtrarOngs()">
+</p-cascadeSelect>
   </div>
-  <!-- End Overview -->
-  <br><br><br>
+</div>
+<!-- End Overview -->
 
-  
+<!-- Table of ONGs -->
+<div class="card">
+  <p-table [value]="ongsWithFilter" [paginator]="true" [rows]="10" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>CNPJ</th>
+        <th>Endereço</th>
+        <th>Cidade</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-ong>
+      <tr>
+        <td>{{ ong.idOng }}</td>
+        <td>{{ ong.nome }}</td>
+        <td>{{ ong.cnpj }}</td>
+        <td>{{ ong.endereco }}</td>
+        <td>{{ ong.cidade.nomeCidade }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

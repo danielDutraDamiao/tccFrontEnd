@@ -6,6 +6,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
 import { MultiSelectModule } from 'primeng/multiselect'; // Verifique o caminho correto
 import { CascadeSelectModule } from 'primeng/cascadeselect';
+import { TableModule } from 'primeng/table';
 
 
 
@@ -19,8 +20,8 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
     CarouselModule,
     CardModule,
     MultiSelectModule, 
-    CascadeSelectModule
-
+    CascadeSelectModule,
+    TableModule
   ]
 })
 export class DoacaoModule { }

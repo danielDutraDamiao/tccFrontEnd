@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -6,16 +7,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontEnd';
-  username = '';
-  password = '';
 
-  logClick() {
-    console.log('FUNCIONOU!');
-  }
+  items: MenuItem[] | undefined;
+  stateOptions: any[] = [{label: 'Off', value: 'off'}, {label: 'On', value: 'on'}];
+  value: string = 'off';  
 
-  logClick2() {
-    console.log('PRODUTO COMPRADO COM SUCESSO!');
-  }
+
+  ngOnInit() {
+        this.items = [
+            {
+                label: 'Vendas',
+                icon: 'pi pi-fw pi-file',
+                routerLink: 'venda'
+               
+            },
+            {
+                label: 'Doação',
+                icon: 'pi pi-fw pi-pencil',
+                routerLink: 'doacao'
+                
+            },
+            {
+                label: 'Reciclagem',
+                icon: 'pi pi-fw pi-user',
+                
+            },
+        ];
+    }
 
 }

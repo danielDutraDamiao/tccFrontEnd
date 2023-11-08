@@ -13,6 +13,7 @@ import { ProductService } from './product.service';
 import { Product } from 'src/app/models/product';
 import { DataViewLayoutOptions } from 'primeng/dataview';
 
+
 import { DomSanitizer } from '@angular/platform-browser';
 
 
@@ -30,6 +31,7 @@ export class VendaComponent implements OnInit {
   items!: MegaMenuItem[];
   subCategorias: SubCategoriaDTO[] = [];
   layout: DataViewLayout = 'grid';
+  defaultImageUrl: string = 'src\assets\images\Earth.png';
   
 
   constructor(
@@ -50,34 +52,37 @@ export class VendaComponent implements OnInit {
       this.subCategorias = result.subCategorias;
       this.produtos = result.produtos;
       this.items = this.buildMenu(this.produtos);
+  
+      // Agora, carregue as imagens depois que os produtos forem obtidos
+      // this.produtos.forEach(produto => {
+      //   this.loadRandomImageForProduct(produto);
+      // });
     });
-    this.produtos.forEach(produto => {
-      this.loadRandomImageForProduct(produto);
-    });
   }
-
-  onLayoutChange(layout: DataViewLayout) {
-    this.layout = layout; // Update the dataViewLayout property
-  }
-
-  loadRandomImageForProduct(produto: ProdutoDTO): void {
-    const accessKey = 'YOUR_ACCESS_KEY'; // Substitua pela sua chave de acesso da API do Unsplash
-    const url = `https://api.unsplash.com/photos/random?client_id=${accessKey}&query=${encodeURIComponent(produto.nomeProduto)}`;
-
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        if (data && data.urls && data.urls.small) {
-          // Atualizar o produto com a URL da imagem
-          produto.imagemProduto = data.urls.small;
-        }
-      })
-      .catch(error => {
-        console.error('Erro ao carregar imagem do Unsplash:', error);
-        // Aqui você pode definir uma imagem padrão em caso de erro
-        produto.imagemProduto = 'path/to/default/image.png';
-      });
-  }
+  
+  // loadRandomImageForProduct(produto: ProdutoDTO): void {
+  //   const accessKey = 'YNDXLDmrPUINmjRoEKTAbeE0OIPbM6o74x2aO_dwIiI'; // Substitua pela sua chave de acesso da API do Unsplash
+  //   const url = `https://api.unsplash.com/photos/random?client_id=${accessKey}&query=${encodeURIComponent(produto.nomeProduto)}`;
+  
+  //   fetch(url)
+  //     .then(response => {
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       return response.json();
+  //     })
+  //     .then(data => {
+  //       if (data && data.urls && data.urls.small) {
+  //         produto.imagemProduto = data.urls.small;
+  //       }
+  //     })
+  //     .catch(error => {
+  //       console.error('Erro ao carregar imagem do Unsplash:', error);
+  //       // Defina uma imagem padrão a partir dos assets do projeto
+  //       produto.imagemProduto = 'assets/default-image.png';
+  //     });
+  // }
+  
 
 //   testeProdutos() {
 //     this.produtoService.listarProdutos().subscribe(produtos => {
@@ -148,19 +153,18 @@ export class VendaComponent implements OnInit {
     return menuItems;
   }
 
-  getSeverity(product: Product): string | undefined {
-    switch (product.inventoryStatus) {
-        case 'INSTOCK':
+  getSeverity(status: string): string {
+    switch (status) {
+        case 'Em Estoque':
             return 'success';
-
-        case 'LOWSTOCK':
+        case 'Baixo Estoque':
             return 'warning';
-
-        case 'OUTOFSTOCK':
+        case 'Sem Estoque':
             return 'danger';
-
         default:
-            return undefined;
+            return 'secondary'; // ou outro valor padrão
     }
-}
+  }
+  
+  
 }

@@ -32,6 +32,12 @@ import { DoacaoComponent } from './components/doacao/doacao.component';
 import { DoacaoModule } from './components/doacao/doacao.module';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
+import { MenubarModule } from 'primeng/menubar';
+import { InputTextModule } from 'primeng/inputtext';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { Table, TableModule } from 'primeng/table';
+
+
 
 
 
@@ -41,7 +47,7 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
     HomeComponent,
     LoginComponent,
     CadastroComponent,
-    DoacaoComponent
+    DoacaoComponent,
  
   ],
   imports: [
@@ -75,6 +81,10 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
     MultiSelectModule,
     ToastrModule.forRoot(),
     CascadeSelectModule,
+    MenubarModule,
+    InputTextModule,
+    SelectButtonModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,34 @@
+/* venda.component.css */
+@import "~primeng/resources/themes/saga-blue/theme.css";
+@import "~primeng/resources/primeng.min.css";
+
+
+.flex-column.align-items-center {
+    align-items: flex-start; /* Alinha os itens à esquerda em vez do centro */
+  }
+  
+  @media (max-width: 768px) {
+    .flex-column.align-items-center {
+      align-items: center; /* No mobile, alinhe ao centro */
+    }
+  }
+  
+  .col-12 {
+    padding: 0; /* Remove o padding padrão se necessário */
+  }
+  
+  .p-4 {
+    padding: 1rem; /* Ajusta o padding para todos os lados se 1rem for mais apropriado */
+  }
+  
+  .w-9 {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do container */
+    max-width: 150px; /* Limita o tamanho máximo da imagem */
+  }
+  
+  .sm\:w-16rem, .xl\:w-10rem {
+    width: auto; /* Permite que a imagem mantenha sua proporção original */
+  }
+  
+  /* Outros estilos específicos que você queira adicionar */
+  
